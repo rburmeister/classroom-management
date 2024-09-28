@@ -1,0 +1,60 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 100vh;
+    overflow-y: scroll;
+    z-index: 10;
+    border-right: 1px solid #d2d2d2;
+
+
+    ul li a {
+        transition: all .3s ease;
+        color: var(--primary-color);
+        padding: 8px;
+
+        &:hover {
+            color: var(--primary-color);
+            background: #fcfcfc;
+            filter: brightness(0.95); 
+        }
+
+        span {
+            display: none;
+        }
+
+        &.active {
+
+            color: var(--primary-color) !important;
+            background: #fcfcfc !important;
+            filter: brightness(0.9); 
+
+            // img {
+            //     filter: invert(1) brightness(2);
+            // }
+        }
+    }
+
+    .dropdown-user{
+        font-size: 16px;
+        font-weight: normal;
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    @media(min-width: 768px){
+        width: 250px;
+
+        ul li {
+            a {
+                padding:  8px 16px;
+                span {
+                    display: flex;
+                }
+            }   
+        }
+    }
+}

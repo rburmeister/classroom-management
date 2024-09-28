@@ -1,0 +1,202 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+// Update DB
+//npx prisma migrate dev --name <migration_name>
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Page {
+  id            Int          @id @default(autoincrement())
+  date          DateTime     @default(now())
+  title         String
+  slug          String       @unique
+  featuredImage String
+  content       String
+  components    PageComponent[]
+}
+
+model User {
+  id            String   @id @default(cuid())
+  name          String?
+  email         String   @unique
+  emailVerified DateTime?
+  image         String?
+  hashedPassword String
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model ThemeSettings {
+  id                Int      @id @default(autoincrement())
+  primaryColor      String   @default("#262ad7")
+  secondaryColor    String   @default("#ff5733")
+  backgroundColor   String   @default("#f8f9fa")
+  fontFamily        String   @default("'Roboto', sans-serif")
+  logoUrl           String?  // Nullable in case no logo is set
+  faviconUrl        String?  // Nullable in case no favicon is set
+  customCss         String?  // Nullable to allow for optional custom CSS
+  typographySettings Json?   // JSON object for typography settings
+  socialMediaLinks  Json?    // JSON object for social media links
+  footerText        String?  // Nullable for optional footer text
+  
+  headerMenuId      Int?     @unique
+  footerMenuId      Int?     @unique
+  
+  headerMenu        Menu?    @relation(name: "HeaderMenu", fields: [headerMenuId], references: [id])
+  footerMenu        Menu?    @relation(name: "FooterMenu", fields: [footerMenuId], references: [id])
+  
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+}
+
+model Notification {
+  id              Int      @id @default(autoincrement())
+  title           String
+  message         String
+  url             String?
+  pageSlug        String?
+  startTime       DateTime
+  endTime         DateTime
+  backgroundColor String    @default("#000000")
+  textColor       String    @default("#ffffff")
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+}
+
+model Menu {
+  id          Int        @id @default(autoincrement())
+  name        String     @unique
+  description String?
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+  menuItems   MenuItem[]
+  headerSettings    ThemeSettings?   @relation(name: "HeaderMenu")
+  footerSettings    ThemeSettings?   @relation(name: "FooterMenu")
+}
+
+model MenuItem {
+  id           Int      @id @default(autoincrement())
+  menuId       Int
+  parentId     Int?     // Self-referencing field for submenus
+  label        String
+  url          String?
+  order        Int      @default(0)
+  target       String?
+  icon         String?
+  imageUrl     String?  // New field for image URL
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  menu         Menu     @relation(fields: [menuId], references: [id], onDelete: Cascade)
+  parentItem   MenuItem? @relation("SubMenu", fields: [parentId], references: [id])
+  childItems   MenuItem[] @relation("SubMenu")
+}
+
+model Business {
+  id            Int      @id @default(autoincrement())
+  firstName    String
+  lastName     String
+  businessName String
+  logo          String?
+  description   String?
+  website       String?
+  email         String?
+  phone         String?
+  address       String?
+  city          String?
+  state         String?
+  zipCode       String?
+  category      Category  @relation(fields: [categoryId], references: [id])
+  categoryId    Int
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model Category {
+  id          Int        @id @default(autoincrement())
+  name        String
+  businesses  Business[]
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+}
+
+model Staff {
+  id            Int      @id @default(autoincrement())
+  firstName     String
+  lastName      String
+  title         String
+  department    Department  @relation(fields: [departmentId], references: [id])
+  departmentId  Int
+  email         String?
+  phone         String?
+  profileImage  String?
+  biography     String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model Department {
+  id            Int      @id @default(autoincrement())
+  name          String   @unique
+  email         String?
+  phone         String?
+  staffMembers  Staff[]
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model PhotoGallery {
+  id            Int      @id @default(autoincrement())
+  name          String
+  url           String   @unique
+  displayType   String
+  autoplay      Boolean  @default(false)
+  transitionSpeed Int    @default(500)  // Speed in milliseconds
+  images        Image[]  // Relation to Image model
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Image {
+  id            Int      @id @default(autoincrement())
+  url           String
+  altText       String?
+  gallery       PhotoGallery @relation(fields: [galleryId], references: [id])
+  galleryId     Int
+  order         Int      @default(0)
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Component {
+  id            Int          @id @default(autoincrement())
+  type          String       // E.g., 'hero', 'gallery', etc.
+  props         Json         // Store the component's props as JSON
+  order         Int          @default(0)  // Order of the component on the page
+  createdAt     DateTime     @default(now())
+  updatedAt     DateTime     @updatedAt
+  pages         PageComponent[]
+}
+
+model PageComponent {
+  pageId        Int
+  componentId   Int
+  page          Page         @relation(fields: [pageId], references: [id])
+  component     Component    @relation(fields: [componentId], references: [id])
+  order         Int          @default(0)  // Specific order of the component on the page
+
+  @@id([pageId, componentId]) // Use @@id for composite keys
+}
+
+

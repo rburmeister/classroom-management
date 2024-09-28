@@ -1,0 +1,26 @@
+.timer-text {
+    color: #98d2dc;
+}
+
+select, input, .btn {
+    height: 40px !important;
+}
+
+canvas {
+    transition: background-color .5s ease-in-out;
+}
+
+.iframe-embed-container {
+    width: calc(100% - 350px);
+}
+
+.toolbar {
+    width: 350px; 
+}
+
+.form-control, .form-select {
+    &:focus {
+        box-shadow: none;
+        border-color: var(--primary-color);
+    }
+}

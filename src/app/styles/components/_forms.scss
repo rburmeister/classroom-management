@@ -1,0 +1,27 @@
+.form-container {
+    height: 100vh;
+
+    h1 {
+        font-size: 32px;
+    }
+}
+
+.menu-item {
+    border: 1px solid #ccc;
+
+    .form-control {
+        border: none;
+        // pointer-events: none;
+    }
+
+    .menu-item {
+        padding: 0 !important;
+        border: none !important;
+        padding-top: 4px !important;
+        padding-bottom: 0 !important;
+        border-top: 1px solid #ccc !important;
+        margin-top: 4px !important;
+        border-radius: 0 !important;
+        margin-bottom: 0 !important;
+    }
+}

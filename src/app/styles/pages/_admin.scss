@@ -1,0 +1,63 @@
+.admin-container {
+    background: #f9f9f9;
+    min-height: 100vh;
+    position: fixed;
+    overflow: scroll;
+    padding-left: 58px;
+
+    @media(min-width: 576px){
+        padding-left: 84px;
+    }
+
+    @media(min-width: 768px){
+        padding-left: 250px;
+    }
+    
+    // > .container {
+    //     padding-left: 275px;
+    // }
+
+    .three-dots button {
+        display: flex;
+        gap: 4px;
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            background: #616161;
+            border-radius: 50%;
+            transition: all .3s ease;
+        }
+
+        &:hover {
+            .dot {
+                background: #000;
+            }
+        }
+    }
+}
+
+.circle-indidicator {
+    padding-right: 8px;
+    font-size: 10px;
+    line-height: 1;
+}
+
+.dev-component {
+    border: 1px solid #ccc;
+}
+
+.toast-success .toast-body {
+    color: #fff;
+}
+
+.logo-img {
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+}
+
+.data-headers {
+    font-weight: bold;
+    color: #000 !important;
+}

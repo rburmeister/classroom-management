@@ -1,0 +1,15 @@
+header {
+    .navbar-brand {
+        img {
+            width: 250px !important;
+            height: auto !important;
+        }
+    }
+    .navbar-collapse {
+        flex-grow: inherit;
+    }
+
+    .nav-link:hover { 
+        color: var(--primary-color);
+    }
+}

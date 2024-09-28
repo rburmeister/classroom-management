@@ -1,0 +1,34 @@
+.hero-editable {
+
+    .input-editable {
+        border: none;
+        width: 100%;
+        height: auto; 
+        line-height: 1;
+        background: transparent;
+        padding: 0;
+        margin: 0;
+        resize: none;
+    }
+
+    textarea {
+        height: auto;
+    }
+
+    .action-panel {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width:200px;
+        border-radius: 8px;
+        background: #fff;
+    }
+
+    .multiline-input {
+        width: 100%;
+        height: auto;
+        white-space: normal;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+}

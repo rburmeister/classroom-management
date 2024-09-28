@@ -1,0 +1,177 @@
+{
+  "heroDefault": {
+    "name": "heroDefault",
+    "fields": [
+      { "name": "displayName", "type": "text", "label": "Name (Not Displayed)", "default": "" },
+      { "name": "title", "type": "text", "label": "Title", "default": "" },
+      { "name": "subtitle", "type": "text", "label": "Subtitle", "default": "" },
+      { "name": "buttonText", "type": "text", "label": "Button Text", "default": "" },
+      { "name": "buttonLink", "type": "text", "label": "Button Link", "default": "" },
+      { "name": "buttonText2", "type": "text", "label": "Button Text 2", "default": "" },
+      { "name": "buttonLink2", "type": "text", "label": "Button Link 2", "default": "" },
+      { "name": "image", "type": "file", "label": "Image", "default": null },
+      { "name": "backgroundColor", "type": "color", "label": "Background Color", "default": "#ffffff" },
+      { "name": "backgroundImage", "type": "file", "label": "Background Image", "default": null },
+      { "name": "textColor", "type": "color", "label": "Text Color", "default": "#000000" }
+    ],
+    "defaultProps": {
+      "displayName": "",
+      "title": "Your Hero Title",
+      "subtitle": "Your subtitle goes here",
+      "buttonText": "Call to Action",
+      "buttonLink": "/link",
+      "buttonText2": "Secondary Action",
+      "buttonLink2": "/link",
+      "image": null,
+      "backgroundColor": "#ffffff",
+      "backgroundImage": null,
+      "textColor": "#000000"
+    }
+  },
+  "heroShowcase": {
+    "name": "heroShowcase",
+    "fields": [
+      { "name": "displayName", "type": "text", "label": "Name (Not Displayed)", "default": "" },
+      { "name": "title", "type": "text", "label": "Title", "default": "" },
+      { "name": "subtitle", "type": "text", "label": "Subtitle", "default": "" },
+      { "name": "buttonText", "type": "text", "label": "Button Text", "default": "" },
+      { "name": "buttonLink", "type": "text", "label": "Button Link", "default": "" },
+      { "name": "backgroundColor", "type": "color", "label": "Background Color", "default": "#ffffff" },
+      { "name": "image", "type": "file", "label": "Image", "default": null },
+      { "name": "textColor", "type": "color", "label": "Text Color", "default": "#000000" }
+    ],
+    "defaultProps": {
+      "displayName": "",
+      "title": "Your Hero Title",
+      "subtitle": "Your subtitle goes here",
+      "buttonText": "Click Me",
+      "buttonLink": "/link",
+      "backgroundColor": "#ffffff",
+      "image": "/images/default-background.jpg",
+      "textColor": "#000000"
+    }
+  },
+  "highlights": {
+    "name": "highlights",
+    "fields": [
+      { "name": "displayName", "type": "text", "label": "Name (Not Displayed)", "default": "" },
+      { "name": "title", "type": "text", "label": "Section Title", "default": "Columns with icons" },
+
+      { "name": "highlight1Title", "type": "text", "label": "Highlight 1 Title", "default": "Featured title 1" },
+      { "name": "highlight1Description", "type": "textarea", "label": "Highlight 1 Description", "default": "Paragraph of text." },
+      { "name": "highlight1Icon", "type": "file", "label": "Highlight 1 Icon", "default": null },
+      { "name": "highlight1Link", "type": "text", "label": "Highlight 1 Link", "default": "#" },
+      { "name": "highlight1LinkText", "type": "text", "label": "Highlight 1 Link Text", "default": "Call to action" },
+      { "name": "highlight1IconBgColor", "type": "color", "label": "Highlight 1 Icon Background Color", "default": "#0d6efd" },
+
+      { "name": "highlight2Title", "type": "text", "label": "Highlight 2 Title", "default": "Featured title 2" },
+      { "name": "highlight2Description", "type": "textarea", "label": "Highlight 2 Description", "default": "Paragraph of text." },
+      { "name": "highlight2Icon", "type": "file", "label": "Highlight 2 Icon", "default": null },
+      { "name": "highlight2Link", "type": "text", "label": "Highlight 2 Link", "default": "#" },
+      { "name": "highlight2LinkText", "type": "text", "label": "Highlight 2 Link Text", "default": "Call to action" },
+      { "name": "highlight2IconBgColor", "type": "color", "label": "Highlight 2 Icon Background Color", "default": "#198754" },
+
+      { "name": "highlight3Title", "type": "text", "label": "Highlight 3 Title", "default": "Featured title 3" },
+      { "name": "highlight3Description", "type": "textarea", "label": "Highlight 3 Description", "default": "Paragraph of text." },
+      { "name": "highlight3Icon", "type": "file", "label": "Highlight 3 Icon", "default": null },
+      { "name": "highlight3Link", "type": "text", "label": "Highlight 3 Link", "default": "#" },
+      { "name": "highlight3LinkText", "type": "text", "label": "Highlight 3 Link Text", "default": "Call to action" },
+      { "name": "highlight3IconBgColor", "type": "color", "label": "Highlight 3 Icon Background Color", "default": "#dc3545" }
+    ],
+    "defaultProps": {
+      "title": "Columns with Icons",
+      
+      "highlight1Title": "Featured title 1",
+      "highlight1Description": "Paragraph of text for highlight 1.",
+      "highlight1Icon": "/images/icon1.png",
+      "highlight1Link": "#",
+      "highlight1LinkText": "Call to action",
+      "highlight1IconBgColor": "#0d6efd",
+
+      "highlight2Title": "Featured title 2",
+      "highlight2Description": "Paragraph of text for highlight 2.",
+      "highlight2Icon": "/images/icon2.png",
+      "highlight2Link": "#",
+      "highlight2LinkText": "Call to action",
+      "highlight2IconBgColor": "#0d6efd",
+
+      "highlight3Title": "Featured title 3",
+      "highlight3Description": "Paragraph of text for highlight 3.",
+      "highlight3Icon": "/images/icon3.png",
+      "highlight3Link": "#",
+      "highlight3LinkText": "Call to action",
+      "highlight3IconBgColor": "#0d6efd"
+    }
+  },
+  "content1": {
+    "name": "content1",
+    "fields": [
+      { "name": "badgeText", "type": "text", "label": "Badge Text", "default": "RICH TEXT MODULE" },
+      { "name": "badgeBgColor", "type": "color", "label": "Badge Background Color", "default": "#E5F0FF" },
+      { "name": "badgeTextColor", "type": "color", "label": "Badge Text Color", "default": "#007BFF" },
+      
+      { "name": "title", "type": "text", "label": "Title", "default": "All in one for you payment transaction online without having to leave the house to make transactions" },
+      
+      { "name": "paragraph1", "type": "textarea", "label": "First Paragraph", "default": "Pellentesque ipsum nulla in eget interdum a. Neque pellentesque pulvinar mauris pulvinar diam." },
+      { "name": "paragraph2", "type": "textarea", "label": "Second Paragraph", "default": "Turpis aliquet pellentesque velit vitae nisi sed morbi ultrices sed. Egestas interdum elit integer nec pharetra eget blandit dolor purus. A sed nisi congue morbi fermentum blandit. Turpis pretium dignissim risus ultrices purus et amet netus nibh." },
+      { "name": "paragraph3", "type": "textarea", "label": "Third Paragraph", "default": "Vestibulum est ante in congue a fusce nunc. At tristique donec nisi viverra vulputate blandit orci at lectus. Morbi cras urna congue ornare. Mi magna vestibulum tortor id nec tortor non. Enim orci lorem egestas sed morbi dui mauris etiam nulla. Euismod cursus viverra ut ac eu sit quam amet tempor. Id in suspendisse nam sit vitae ullamcorper mollis et ut." },
+
+      { "name": "mainImage", "type": "file", "label": "Main Image", "default": "/images/content/photo-article-large.png" },
+
+      { "name": "bgImageTopLeft", "type": "file", "label": "Background Image Top Left", "default": "/images/content/stars-left-top.svg" },
+      { "name": "bgImageBottomRight", "type": "file", "label": "Background Image Bottom Right", "default": "/images/content/orange-light-right.png" }
+    ],
+    "defaultProps": {
+      "badgeText": "RICH TEXT MODULE",
+      "badgeBgColor": "#E5F0FF",
+      "badgeTextColor": "#007BFF",
+      
+      "title": "All in one for you payment transaction online without having to leave the house to make transactions",
+      
+      "paragraph1": "Pellentesque ipsum nulla in eget interdum a. Neque pellentesque pulvinar mauris pulvinar diam.",
+      "paragraph2": "Turpis aliquet pellentesque velit vitae nisi sed morbi ultrices sed. Egestas interdum elit integer nec pharetra eget blandit dolor purus. A sed nisi congue morbi fermentum blandit. Turpis pretium dignissim risus ultrices purus et amet netus nibh.",
+      "paragraph3": "Vestibulum est ante in congue a fusce nunc. At tristique donec nisi viverra vulputate blandit orci at lectus. Morbi cras urna congue ornare. Mi magna vestibulum tortor id nec tortor non. Enim orci lorem egestas sed morbi dui mauris etiam nulla. Euismod cursus viverra ut ac eu sit quam amet tempor. Id in suspendisse nam sit vitae ullamcorper mollis et ut.",
+      
+      "mainImage": "/images/content/photo-article-large.png",
+      
+      "bgImageTopLeft": "/images/content/stars-left-top.svg",
+      "bgImageBottomRight": "/images/content/orange-light-right.png"
+    }
+  },
+    "highlightCards": {
+      "name": "highlightCards",
+      "fields": [
+        { "name": "title", "type": "text", "label": "Section Title", "default": "Advertise impressive product performance" },
+        { "name": "description", "type": "textarea", "label": "Section Description", "default": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." },
+        
+        { "name": "card1Image", "type": "file", "label": "Card 1 Image", "default": "/path/to/image1.png" },
+        { "name": "card1Title", "type": "text", "label": "Card 1 Title", "default": "A complete toolkit for your business" },
+        { "name": "card1Link", "type": "text", "label": "Card 1 Link", "default": "/link1" },
+        
+        { "name": "card2Image", "type": "file", "label": "Card 2 Image", "default": "/path/to/image2.png" },
+        { "name": "card2Title", "type": "text", "label": "Card 2 Title", "default": "Build any website in minutes" },
+        { "name": "card2Link", "type": "text", "label": "Card 2 Link", "default": "/link2" },
+        
+        { "name": "card3Image", "type": "file", "label": "Card 3 Image", "default": "/path/to/image3.png" },
+        { "name": "card3Title", "type": "text", "label": "Card 3 Title", "default": "Stay happy with results" },
+        { "name": "card3Link", "type": "text", "label": "Card 3 Link", "default": "/link3" }
+      ],
+      "defaultProps": {
+        "title": "Advertise impressive product performance",
+        "description": "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.",
+        
+        "card1Image": "/path/to/image1.png",
+        "card1Title": "A complete toolkit for your business",
+        "card1Link": "/link1",
+        
+        "card2Image": "/path/to/image2.png",
+        "card2Title": "Build any website in minutes",
+        "card2Link": "/link2",
+        
+        "card3Image": "/path/to/image3.png",
+        "card3Title": "Stay happy with results",
+        "card3Link": "/link3"
+      }
+    }  
+}
+
