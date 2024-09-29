@@ -1,3 +1,50 @@
+/* app/globals.scss */
+
+/* Import the Chicle font from Google Fonts */
+
+body {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+// .logo-container {
+//     background: #f3eee2
+// }
+
+/* Define a class that uses the Chicle font */
+.abril-fatface-regular {
+    font-family: "Abril Fatface", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  .poppins-semibold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .poppins-bold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  
+
 .timer-text {
     color: #98d2dc;
 }
@@ -24,3 +71,126 @@ canvas {
         border-color: var(--primary-color);
     }
 }
+
+.pip {
+    position: absolute;
+    background: #000;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.dice-container {
+    overflow: hidden;
+}
+// Dice.module.scss
+
+// .dice-container {
+//     position: relative;
+//     height: 300px;
+//   }
+  
+//   .dice {
+//     width: 100px;
+//     height: 100px;
+//     position: absolute;
+//     left: 50%;
+//     transform: translate(-50%,-200px);
+//     perspective: 1000px;
+//     transform-style: preserve-3d;
+//   }
+.dice-container {
+    position: relative;
+    height: 89px;
+    perspective: 800px; /* Add perspective for 3D effect */
+  }
+  
+  .dice {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.85);
+    transform-style: preserve-3d;
+    opacity: 0;
+  }
+  
+  .face {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .pip {
+    width: 20px;
+    height: 20px;
+    border-color: black;
+    border-radius: 50%;
+    position: absolute;
+    background: var(--secondary-color);
+
+  }
+  
+  /* Position each face in 3D space */
+  .face-1 { transform: rotateY(0deg) translateZ(50px); }   /* Front */
+  .face-2 { transform: rotateY(90deg) translateZ(50px); }  /* Right */
+  .face-3 { transform: rotateY(180deg) translateZ(50px); } /* Back */
+  .face-4 { transform: rotateY(-90deg) translateZ(50px); } /* Left */
+  .face-5 { transform: rotateX(90deg) translateZ(50px); }  /* Top */
+  .face-6 { transform: rotateX(-90deg) translateZ(50px); } /* Bottom */
+  
+  /* Positioning pips for each face */
+  .face-1 .pip {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .face-2 .pip:nth-child(1) { top: 20%; left: 20%; }
+  .face-2 .pip:nth-child(2) { bottom: 20%; right: 20%; }
+  
+  .face-3 .pip:nth-child(1) { top: 20%; left: 20%; }
+  .face-3 .pip:nth-child(2) { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+  .face-3 .pip:nth-child(3) { bottom: 20%; right: 20%; }
+  
+  .face-4 .pip:nth-child(1) { top: 20%; left: 20%; }
+  .face-4 .pip:nth-child(2) { top: 20%; right: 20%; }
+  .face-4 .pip:nth-child(3) { bottom: 20%; left: 20%; }
+  .face-4 .pip:nth-child(4) { bottom: 20%; right: 20%; }
+  
+  .face-5 .pip:nth-child(1) { top: 20%; left: 20%; }
+  .face-5 .pip:nth-child(2) { top: 20%; right: 20%; }
+  .face-5 .pip:nth-child(3) { top: 50%; left: 50%; transform: translate(-50%, -50%); }
+  .face-5 .pip:nth-child(4) { bottom: 20%; left: 20%; }
+  .face-5 .pip:nth-child(5) { bottom: 20%; right: 20%; }
+  
+  .face-6 .pip:nth-child(1) { top: 20%; left: 20%; }
+  .face-6 .pip:nth-child(2) { top: 20%; right: 20%; }
+  .face-6 .pip:nth-child(3) { top: 50%; left: 20%; transform: translateY(-50%); }
+  .face-6 .pip:nth-child(4) { top: 50%; right: 20%; transform: translateY(-50%); }
+  .face-6 .pip:nth-child(5) { bottom: 20%; left: 20%; }
+  .face-6 .pip:nth-child(6) { bottom: 20%; right: 20%; }
+  
+
+  .progress-container {
+    background: #f3eee2;
+  }
+  .progress-bar {
+    height: 20px;
+    background: var(--secondary-color);
+  }
+
+  .chicle-regular {
+    font-family: "Chicle", serif;
+    font-weight: 400;
+    font-style: normal;
+  }

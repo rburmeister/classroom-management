@@ -45,15 +45,15 @@ export default function GeneralEmbed() {
 
   return (
     <div className="position-relative h-100">
-      <div className="d-flex align-items-center">
-        <h2 className="mb-0">Embed Content</h2>
+      <div className="d-flex align-items-center flex-wrap">
+        <h2 className="mb-0 mt-3">Add Content</h2>
         <button
-          className="btn btn-primary rounded-pill ms-3 px-3 py-1"
+          className="btn btn-primary rounded-pill ms-3 px-3 py-1 mt-3 d-flex align-self-start w-auto"
           onClick={handlePlusClick}
         >   <img src="/images/plus.png" alt="plus" className="" width="24" /></button>
       </div>
       {showInput && (
-        <div className="mt-2 position-absolute top-0 mt-5 z-2 p-4 bg-white shadow w-100 rounded-4">
+        <div className="mt-2 position-absolute top-0 mt-5 z-2 p-4 bg-white shadow-sm w-100 rounded-4">
           <textarea
             className="form-control rounded-4"
             rows="4"

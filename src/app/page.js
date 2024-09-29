@@ -7,17 +7,22 @@ import MathProblemGenerator from '@/app/components/classroom/MathProblemGenerato
 import VoiceLevelDetector from '@/app/components/classroom/VoiceLevelDetector';
 
 export default function Dashboard() {
-  const canvaUrl = 'https://www.canva.com/design/DAGPLxEJsuI/s204uKm8SiZ9EflN4E7SnQ/view'; // Replace with actual URL
 
   return (
     <div className="container-fluid h-100">
       <div className="row h-100">
-        <div className="col-auto iframe-embed-container p-4 min-vh-100">
+        <div className="col-auto iframe-embed-container p-4 pt-0 min-vh-100position-relative">
           <div className="iframe-embed h-100">
             <IframeEmbed />
           </div>
         </div>
-        <div className="col-auto toolbar p-0">
+        <div className="col-auto toolbar p-0 shadow-sm min-vh-100 position-relative">
+          <div className="p-3 logo-container">
+            <div className="d-flex align-items-center">
+              <img src="/images/smartclass.png" alt="Math Icon" className="px-4" width="100%" />
+              {/* <h1 className="fw-500 ms-2 mb-0 pb-0">SmartClass</h1> */}
+              </div>
+          </div>
           <Timer />
           <Dice />
           <JournalPrompt />

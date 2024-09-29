@@ -35,8 +35,10 @@ export default function MathProblemGenerator() {
             onChange={(e) => setOperation(e.target.value)}
             disabled={loading}
           >
-            <option value="multiplication">Multiplication</option>
+            <option value="addition">Addition</option>
             <option value="division">Division</option>
+            <option value="multiplication">Multiplication</option>
+            <option value="subtraction">Subtraction</option>
           </select>
         </div>
         <button className="btn btn-primary rounded-pill ms-2" onClick={fetchProblem} disabled={loading}>
