@@ -26,9 +26,9 @@ export default function MathProblemGenerator() {
   };
 
   return (
-    <div className="p-4 border-bottom">
-      <div className=" d-flex align-items-center w-100">
-        <div className="flex-grow-1 d-flex align-items-center w-50">
+    <div className="p-0">
+      <div className=" d-flex flex-column align-items-center w-100">
+        <div className="flex-grow-1 d-flex align-items-center w-100">
           <select
             className="form-select rounded-pill"
             value={operation}
@@ -41,12 +41,12 @@ export default function MathProblemGenerator() {
             <option value="subtraction">Subtraction</option>
           </select>
         </div>
-        <button className="btn btn-primary rounded-pill ms-2" onClick={fetchProblem} disabled={loading}>
-          {loading ? 'Generating...' : 'Math'}
+        <button className="btn btn-primary rounded-pill ms-2 mt-3" onClick={fetchProblem} disabled={loading}>
+          {loading ? 'Generating...' : 'Create'}
           <img src="/images/math.png" alt="Math Icon" className="ms-2" width="24" />
         </button>
       </div>
-      {problem && <div className="alert alert-info rounded-lg mt-4">{problem}</div>}
+      {problem && <div className="h4 position-relative rounded-lg mt-4">"{problem}"</div>}
     </div>
   );
 }

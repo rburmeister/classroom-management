@@ -6,6 +6,7 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
+    background: #f3eee2;
 }
 
 // .logo-container {
@@ -58,11 +59,18 @@ canvas {
 }
 
 .iframe-embed-container {
-    width: calc(100% - 350px);
+  height: calc(100vh - 164px);
 }
 
 .toolbar {
-    width: 350px; 
+    position: absolute;
+    bottom: 16px;
+    width: 96%;
+    height: 80px;
+    display: flex;
+    gap: 16px;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 .form-control, .form-select {
@@ -194,3 +202,32 @@ canvas {
     font-weight: 400;
     font-style: normal;
   }
+
+  /* Full-screen overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  /* Container for SHHHHHHHHH letters */
+  .shh-container {
+    font-size: 5rem;
+    color: var(--primary-color);
+    display: flex;
+    gap: 0.5rem;
+    font-weight: 700;
+  }
+  
+  /* Each letter animation */
+  .letter {
+    opacity: 1; /* Initially hidden */
+  }
+  

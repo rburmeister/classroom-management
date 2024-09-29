@@ -16,7 +16,7 @@ export async function POST(req) {
       messages: [
         {
           role: "system",
-          content: "Create a 5th-grade appropriate journal prompt. Make it engaging and at the appropriate level for a 5th grader."
+          content: "Create a 5th-grade appropriate journal prompt. Make it engaging and at the appropriate level for a 5th grader. It should be concise and no longer than 2 or 3 sentences."
         },
         {
           role: "user",

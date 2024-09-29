@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import Draggable from 'react-draggable';
 
 export default function Timer() {
   const [minutes, setMinutes] = useState('');
@@ -10,8 +11,8 @@ export default function Timer() {
   const [isRunning, setIsRunning] = useState(false); // Track if the timer is running
   const timerIdRef = useRef(null); // Reference to store the interval ID
 
-  // Start the timer
-  const handleStart = () => {
+  // Start the countdown
+  const handleBeginCountdown = () => {
     const total = parseInt(minutes, 10) * 60;
     setTotalSeconds(total);
     setSecondsLeft(total);
@@ -69,64 +70,62 @@ export default function Timer() {
   };
 
   return (
-    <div className="p-4 border-bottom">
-      <div className="flex-grow-1 d-flex align-items-center">
-        {/* Input and Start/Cancel button */}
-        <input
-          type="number"
-          className="form-control rounded-pill py-3"
-          value={minutes}
-          onChange={(e) => setMinutes(e.target.value)}
-          placeholder="Enter minutes"
-          disabled={isRunning} // Disable input when timer is running
-        />
+      <>
+        <div className=" d-flex align-items-center">
+          {/* Input for minutes */}
+          <input
+            type="number"
+            className="form-control rounded-pill py-3 flex-grow-1 d-flex "
+            value={minutes}
+            onChange={(e) => setMinutes(e.target.value)}
+            placeholder="Enter minutes"
+            width="64"
+            disabled={isRunning} // Disable input when timer is running
+          />
 
-        {/* Conditionally render Start/Cancel buttons */}
-        {!isRunning ? (
-          <button className="btn btn-primary rounded-pill ms-2" onClick={handleStart}>
-            Start
-            <img src="/images/timer.png" alt="Timer" className="ms-2" width="24" />
-          </button>
-        ) : (
-          <button className="btn btn-danger rounded-pill ms-2" onClick={handleCancel}>
-            Cancel
-            <img src="/images/timer.png" alt="Cancel" className="ms-2" width="24" />
-          </button>
-        )}
-      </div>
+          {/* Start or Cancel button */}
+          {!isRunning ? (
+            <button className="btn btn-primary rounded-pill ms-2 w-100" onClick={handleBeginCountdown}>
+              <img src="/images/play.png" alt="Timer" className="" width="24" />
+            </button>
+          ) : (
+            <div className="d-flex align-items-center justify-space-between ms-auto">
+            <button className="btn btn-secondary rounded-pill ms-2" onClick={handleCancel}>
 
-      {/* Countdown and Progress Bar */}
-      {secondsLeft > 0 && (
-        <>
-          <div className="d-flex justify-content-center align-items-center mt-4">
-        
+              <img src="/images/close.png" alt="Cancel" className="" width="24" />
+            </button>
+                            {/* Pause and Play buttons */}
+                            {isPaused ? (
+                <button className="btn btn-primary border-0 rounded-pill ms-2" onClick={handleResume}>
+                   <img src="/images/play.png" alt="play" className="" width="30" />
+                </button>
+              ) : (
+                <button className="btn btn-primary border-0 rounded-pill ms-2" onClick={handlePause}>
+                   <img src="/images/pause.png" alt="pause" className="" width="24" />
+                </button>
+              )}
+            </div>
+          )}
+        </div>
 
-
-          <button className="btn bg-transparent border-0" onClick={handlePause}>
-                <img src="/images/pause.png" alt="pause" className="" width="24" />
-              </button>
-
-
+        {/* Countdown and Progress Bar */}
+        {secondsLeft > 0 && (
+          <>
+            <div className="d-flex justify-content-center align-items-center mt-4 position-relative">
+                            {/* Timer Text */}
               <h1 className="text-center timer-text fw-bold px-3">{formatTime()}</h1>
+            </div>
 
-              <button className="btn bg-transparent border-0" onClick={handleResume}>
-              <img src="/images/play.png" alt="play" className="" width="30" />
-              </button>
-
-
- 
-          </div>
-
-          {/* Progress bar container */}
-          <div className="progress-container mt-4 rounded-pill">
-            {/* Dynamic progress bar width */}
-            <div
-              className="progress-bar ms-auto rounded-pill"
-              style={{ width: getProgressWidth(), transition: 'width 1s linear' }}
-            />
-          </div>
-        </>
-      )}
-    </div>
+            {/* Progress bar container */}
+            <div className="progress-container mt-4 rounded-pill">
+              {/* Dynamic progress bar width */}
+              <div
+                className="progress-bar ms-auto rounded-pill"
+                style={{ width: getProgressWidth(), transition: 'width 1s linear' }}
+              />
+            </div>
+          </>
+        )}
+      </>
   );
 }

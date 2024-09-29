@@ -1,28 +1,27 @@
-// components/GeneralEmbed.js
-
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import DOMPurify from 'dompurify';
+import React from 'react';
 
-export default function GeneralEmbed() {
+function GeneralEmbed() {
   const [showInput, setShowInput] = useState(false);
   const [embedCode, setEmbedCode] = useState('');
   const [sanitizedEmbedCode, setSanitizedEmbedCode] = useState('');
 
-  const handlePlusClick = () => {
+  const handlePlusClick = useCallback(() => {
     setShowInput(true);
-  };
+  }, []);
 
-  const handleCloseClick = () => {
+  const handleCloseClick = useCallback(() => {
     setShowInput(false);
-  };
+  }, []);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = useCallback((e) => {
     setEmbedCode(e.target.value);
-  };
+  }, []);
 
-  const handleAddClick = () => {
+  const handleAddClick = useCallback(() => {
     const sanitizedCode = DOMPurify.sanitize(embedCode, {
       ALLOWED_TAGS: ['iframe', 'div'],
       ALLOWED_ATTR: [
@@ -41,7 +40,7 @@ export default function GeneralEmbed() {
     setSanitizedEmbedCode(sanitizedCode);
     setShowInput(false);
     setEmbedCode('');
-  };
+  }, [embedCode]);
 
   return (
     <div className="position-relative h-100">
@@ -50,7 +49,9 @@ export default function GeneralEmbed() {
         <button
           className="btn btn-primary rounded-pill ms-3 px-3 py-1 mt-3 d-flex align-self-start w-auto"
           onClick={handlePlusClick}
-        >   <img src="/images/plus.png" alt="plus" className="" width="24" /></button>
+        >
+          <img src="/images/plus.png" alt="plus" className="" width="24" />
+        </button>
       </div>
       {showInput && (
         <div className="mt-2 position-absolute top-0 mt-5 z-2 p-4 bg-white shadow-sm w-100 rounded-4">
@@ -62,18 +63,18 @@ export default function GeneralEmbed() {
             onChange={handleInputChange}
           />
           <div className="d-flex">
-          <button
-            className="btn btn-primary rounded-pill mt-3"
-            onClick={handleCloseClick}
-          >
-            Close
-          </button>
-          <button
-            className="btn btn-primary rounded-pill mt-3 ms-3"
-            onClick={handleAddClick}
-          >
-            Save
-          </button>
+            <button
+              className="btn btn-primary rounded-pill mt-3"
+              onClick={handleCloseClick}
+            >
+              Close
+            </button>
+            <button
+              className="btn btn-primary rounded-pill mt-3 ms-3"
+              onClick={handleAddClick}
+            >
+              Save
+            </button>
           </div>
         </div>
       )}
@@ -86,3 +87,6 @@ export default function GeneralEmbed() {
     </div>
   );
 }
+
+// Memoize to prevent unnecessary re-renders
+export default React.memo(GeneralEmbed);

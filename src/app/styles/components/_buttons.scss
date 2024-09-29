@@ -8,6 +8,7 @@ button {
     align-items: center;
     justify-content: center;
     line-height: 1;
+    transition: all .3s ease;
 }
 
 .btn-primary {
@@ -58,4 +59,18 @@ button {
 
 .btn-circle {
     border-radius: 50%;
+}
+
+
+.btn-close-widget {
+    margin-top: -16px;
+    margin-left: -8px;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+
+.resizable-draggable-container {
+    &:hover .btn-close-widget {
+        opacity: 1;
+    }
 }
