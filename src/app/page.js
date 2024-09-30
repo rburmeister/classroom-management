@@ -29,7 +29,7 @@ export default function Dashboard() {
         <div className="toolbar px-4 shadow-sm bg-white rounded-5 d-flex align-items-center z-2">
           <div className="logo-container me-3">
             <div className="d-flex align-items-center h-100">
-              <img src="/images/smartclass.png" alt="Math Icon" className="px-0" width="200" />
+              <img src="/images/teacherscreen.png" alt="Math Icon" className="px-0" width="200" />
             </div>
           </div>
 

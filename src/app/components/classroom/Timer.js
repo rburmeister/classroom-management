@@ -78,7 +78,7 @@ export default function Timer() {
             className="form-control rounded-pill py-3 flex-grow-1 d-flex "
             value={minutes}
             onChange={(e) => setMinutes(e.target.value)}
-            placeholder="Enter minutes"
+            placeholder="Minutes"
             width="64"
             disabled={isRunning} // Disable input when timer is running
           />

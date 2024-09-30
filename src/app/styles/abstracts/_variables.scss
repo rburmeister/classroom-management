@@ -1,19 +1,20 @@
 :root {
     --background-color: #ffffff;
-    --primary-color: #f0909b;
+    --primary-color: #feecba;
     --secondary-color: #98d2dc;
     --body-font-family: 'Arial, sans-serif';
     --bs-primary: '#0d6efd';
     --bs-secondary: '#6c757d';
-    --bs-btn-bg: #f0909b;
-    --bs-btn-border-color: #f0909b;
+    --bs-btn-bg: #feecba;
+    --bs-btn-border-color: #feecba;
     --bs-btn-hover-color: #fff;
-    --bs-btn-hover-bg: #f0909b;
-    --bs-btn-hover-border-color: #f0909b;
+    --bs-btn-hover-bg: #feecba;
+    --bs-btn-hover-border-color: #feecba;
     --bs-btn-focus-shadow-rgb: 49, 132, 253;
     --bs-btn-active-color: #fff;
-    --bs-btn-active-bg: #f0909b;
-    --bs-btn-active-border-color: #f0909b;
+    // --bs-btn-active-bg: #f0909b;
+    --bs-btn-active-bg: #feecba;
+    --bs-btn-active-border-color: #feecba;
   }
   
   body.govcms {

@@ -47,7 +47,7 @@ function GeneralEmbed() {
       <div className="d-flex align-items-center flex-wrap">
         <h2 className="mb-0 mt-3">Add Content</h2>
         <button
-          className="btn btn-primary rounded-pill ms-3 px-3 py-1 mt-3 d-flex align-self-start w-auto"
+          className="btn btn-primary rounded-pill ms-3 px-3 py-1 mt-3 d-flex align-self-start w-auto position-relative z-2"
           onClick={handlePlusClick}
         >
           <img src="/images/plus.png" alt="plus" className="" width="24" />
