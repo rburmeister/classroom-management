@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../app/styles/main.scss';
 
 export const metadata = {
-  title: 'SmartClass',
+  title: 'TeacherScreen',
   description: 'Classroom Management Tool',
 };
 
